@@ -1,0 +1,171 @@
+<!-- https://www.perplexity.ai/search/link-js-file-17TDsrPbR4i9w0AIyjNMWg -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Page - College Picker</title>
+    <meta property="og:title" content="Page - College Picker" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+    <style>
+      @keyframes fade-in-left {
+        0% {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .hidden {
+      display: none;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>College Selection Form</h1>
+  <form id="myForm" action="#" method="post">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="currentSchool">Current School:</label><br>
+    <input type="text" id="currentSchool" name="currentSchool" required><br>
+
+    <label for="collegeInterest">Are you interested in attending college?</label><br>
+    <input type="radio" id="yes" name="collegeInterest" value="yes" required onclick="toggleCollegeOptions()">
+    <label for="yes">Yes</label><br>
+    <input type="radio" id="no" name="collegeInterest" value="no" onclick="toggleCollegeOptions()">
+    <label for="no">No</label><br>
+
+    <div id="college-options" class="hidden">
+      <label for="state">Select your desired state:</label><br>
+      <select id="state" name="state">
+        <option value="">-- Select State --</option>
+        <option value="colorado">Colorado</option>
+        <option value="pennsylvania">Pennsylvania</option>
+        <option value="rhode-island">Rhode Island</option>
+      </select><br>
+
+      <label for="collegeSize">Do you prefer a big or small college?</label><br>
+      <input type="radio" id="big" name="collegeSize" value="big">
+      <label for="big">Big</label><br>
+      <input type="radio" id="small" name="collegeSize" value="small">
+      <label for="small">Small</label><br>
+    </div>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    // Get the form element
+    const form = document.getElementById('myForm');
+    const resultDiv = document.getElementById('result');
+    const collegeOptions = document.getElementById('college-options');
+
+    // Function to toggle the visibility of college options
+    function toggleCollegeOptions() {
+      const yesRadio = document.getElementById('yes');
+      if (yesRadio.checked) {
+        collegeOptions.classList.remove('hidden');
+      } else {
+        collegeOptions.classList.add('hidden');
+      }
+    }
+
+    // Add an event listener for the 'submit' event
+    form.addEventListener('submit', function(event) {
+      // Prevent the default form submission behavior
+      event.preventDefault();
+
+      // Get the form data
+      const formData = new FormData(form);
+      const formDataObject = Object.fromEntries(formData);
+
+      // Check the user's college interest
+      if (formDataObject.collegeInterest === 'yes') {
+        // Redirect the user to the respective college website
+        switch (formDataObject.state) {
+          case 'colorado':
+            if (formDataObject.collegeSize === 'big') {
+              window.location.href = 'https://www.colorado.edu/';
+            } else {
+              window.location.href = 'https://www.colostate.edu/';
+            }
+            break;
+          case 'pennsylvania':
+            if (formDataObject.collegeSize === 'big') {
+              window.location.href = 'https://www.upenn.edu/';
+            } else {
+              window.location.href = 'https://www.psu.edu/';
+            }
+            break;
+          case 'rhode-island':
+            if (formDataObject.collegeSize === 'big') {
+              window.location.href = 'https://www.brown.edu/';
+            } else {
+              window.location.href = 'https://uri.edu/';
+            }
+            break;
+          default:
+            resultDiv.textContent = 'Please select a state and college size.';
+        }
+      } else {
+        resultDiv.textContent = 'No college';
+      }
+
+      // Log the form data to the console
+      console.log('Form data:', formDataObject);
+    });
+  </script>
+        
+      </body>
+      </html>
